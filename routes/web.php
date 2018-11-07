@@ -10,9 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/modul',function(){
-	return "Halaman Modul";
-})->name('modul.upload');
+
 
 Route::get('/', [
 	'as' => 'home',
@@ -23,9 +21,6 @@ Route::get('/', [
 );
 
 Route::group(['middleware' => 'rbac'],function(){
-	Route::get('/modul',function(){
-		return "Halaman Modul";
-	})->name('modul.upload');
 	
 	Route::get('roles',[
 		'uses' => 'RoleController@index',
@@ -143,3 +138,16 @@ Route::get('logout',[
 	'uses' => 'AuthController@logout',
 	'as' => 'auth.logout',
 ]);
+
+Route::post('forgotpassword', [
+		'uses' => 'AuthController@postforgotpassword',
+		'as' => 'post.forgot.password',
+	]);
+Route::get('resetpassword/{code}', [
+		'uses' => 'AuthController@resetpassword',
+		'as' => 'auth.reset.password',
+	]);
+Route::post('resetpassword/{code}', [
+		'uses' => 'AuthController@postresetpassword',
+		'as' => 'post.reset.password',
+	]);

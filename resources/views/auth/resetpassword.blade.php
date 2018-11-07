@@ -70,24 +70,27 @@ License: You must have a valid license purchased only from themeforest(the above
                             <strong>Voila..</strong> {{Session::get('success-message')}} 
                         </div>
                         @endif
-
-                         @if(Session::has('success-reset-password-message'))
-                        <div class="alert alert-success">
-                            <strong></strong> {{Session::get('success-reset-password-message')}} 
-                        </div>
-                        @endif
-                        <h1>{{config('app.name')}} Login</h1>
+                        <h1>{{config('app.name')}} Reset Password</h1>
                        
-                        <form action="{!!route('auth.dologin')!!}" class="login-form" method="post">
+                        <form action="{!!route('post.reset.password',$reset_password_code)!!}" class="login-form" method="post">              
                             <div class="alert alert-danger display-hide">
                                 <button class="close" data-close="alert"></button>
-                                <span>Enter email and password. </span>
-                            </div>
+                                <span>Enter your new password.</span>
+                            </div>              
                             <div class="row">
+                                <div class="col-xs-6">   
+
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group{{$errors->has('password') ? ' has-error' : ''}}" type="password" autocomplete="off" placeholder="New Password" name="password" required/> 
+                                    @if($errors->has('password'))
+                                        <span class="help-block help-block-error">{{$errors->first('password')}}</span>
+                                    @endif
+                                </div>
                                 <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="email" autocomplete="off" placeholder="Username" name="email" required/> </div>
-                                <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group{{$errors->has('password_confirmation') ? ' has-error' : ''}}" type="password" autocomplete="off" placeholder="New Password confirmation" name="password_confirmation" required/> 
+                                    @if($errors->has('password_confirmation'))
+                                        <span class="help-block help-block-error">{{$error->first('password_confirmation')}}</span>
+                                    @endif
+                                </div>
                                 {{csrf_field()}}
                             </div>
                             <div class="row">
@@ -99,27 +102,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </label>
                                     </div> -->
                                 </div>
-                                <div class="col-sm-8 text-right">
-                                    <div class="forgot-password">
-                                        <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
-                                    </div>
-                                    <button class="btn green" type="submit">Sign In</button>
+                                <div class="col-sm-8 text-right">                                   
+                                    <button class="btn green" type="submit">Reset</button>
                                 </div>
                             </div>
                         </form>
-                        <!-- BEGIN FORGOT PASSWORD FORM -->
-                        <form class="forget-form" action="{{route('post.forgot.password')}}" method="post">
-                            <h3 class="font-green">Forgot Password ?</h3>
-                            <p> Enter your e-mail address below to reset your password. </p>
-                            <div class="form-group">
-                                <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" /> </div>
-                                {{csrf_field()}}
-                            <div class="form-actions">
-                                <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
-                                <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
-                            </div>
-                        </form>
-                        <!-- END FORGOT PASSWORD FORM -->
+                        
                     </div>
                     <div class="login-footer">
                         <div class="row bs-reset">

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Mail\UserSubmitForgotPasswordForm;
 use App\Http\Requests;
 
 class AuthController extends Controller
@@ -35,9 +36,22 @@ class AuthController extends Controller
     	return view('errors.401');
     }
 
+    public function postforgotpassword(Request $request)
+    {
+        $user = User::whereEmail($request->email)->first();
+        if($user){
+            $user->reset_password_code = str_random(60);
+            $user->save();
+            \Mail::to($user->email)->send(new UserSubmitForgotPasswordForm($user));
+            return redirect()->back()->with('success-message','Reset password instruction has been sent to your email');
+        }
+
+        return redirect()->back()->with('error-message','We cannot find any account with the email you requested');
+    }
+
     public function resetpassword($reset_password_code)
     {
-        $user = \App\User::whereResetPasswordCode($reset_password_code)->first();
+        $user = \App\User::whereResetPasswordCode($reset_password_code)->first();        
         if(!$user){
             return redirect()->route('auth.login');
         }
@@ -56,10 +70,10 @@ class AuthController extends Controller
         $user = \App\User::whereResetPasswordCode($reset_password_code)->first();
 
         $user->password = bcrypt($request->input('password'));
-
+        $user->reset_password_code = null;
         $user->save();
 
-        return redirect()->route('auth.login')->with('message','Password berhasil dirubah, Silahkan Login dengan password baru');
+        return redirect()->route('auth.login')->with('success-reset-password-message','Your new password has beed applied, please login with your new password.');
         
     }
 
