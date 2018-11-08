@@ -85,7 +85,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="email" autocomplete="off" placeholder="Username" name="email" required/> </div>
+                                    <input class="form-control form-control-solid placeholder-no-fix form-group" type="email" placeholder="Username" name="email" autofocus required/> </div>
                                 <div class="col-xs-6">
                                     <input class="form-control form-control-solid placeholder-no-fix form-group" type="password" autocomplete="off" placeholder="Password" name="password" required/> </div>
                                 {{csrf_field()}}

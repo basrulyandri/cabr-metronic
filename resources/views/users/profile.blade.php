@@ -30,19 +30,11 @@
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li>
-                            <a href="page_user_profile_1.html">
-                                <i class="icon-home"></i> Overview </a>
-                        </li>
+                    <ul class="nav">                       
                         <li class="active">
-                            <a href="page_user_profile_1_account.html">
+                            <a href="{{route('user.profile',$user->username)}}">
                                 <i class="icon-settings"></i> Account Settings </a>
-                        </li>
-                        <li>
-                            <a href="page_user_profile_1_help.html">
-                                <i class="icon-info"></i> Help </a>
-                        </li>
+                        </li>                        
                     </ul>
                 </div>
                 <!-- END MENU -->
@@ -85,7 +77,7 @@
                                     {!!Form::open(['route' => ['user.update', $user],'method' => 'POST'])!!}
                                         <div class='form-group{{$errors->has('first_name') ? ' has-error' : ''}}'>
                                           {!!Form::label('first_name','First Name',['class' => 'control-label'])!!}
-                                            {!!Form::text('first_name',$user->first_name,['class' => 'form-control','placeholder' => 'First Name','required' => 'true'])!!}
+                                            {!!Form::text('first_name',$user->first_name,['class' => 'form-control','placeholder' => 'First Name'])!!}
                                             @if($errors->has('first_name'))
                                               <span class="help-block">{{$errors->first('first_name')}}</span>
                                             @endif                                          
@@ -93,7 +85,7 @@
 
                                          <div class='form-group{{$errors->has('last_name') ? ' has-error' : ''}}'>
                                           {!!Form::label('last_name','Last Name',['class' => 'control-label'])!!}
-                                            {!!Form::text('last_name',$user->last_name,['class' => 'form-control','placeholder' => 'Last Name','required' => 'true'])!!}
+                                            {!!Form::text('last_name',$user->last_name,['class' => 'form-control','placeholder' => 'Last Name'])!!}
                                             @if($errors->has('last_name'))
                                               <span class="help-block">{{$errors->first('last_name')}}</span>
                                             @endif                                          
@@ -101,7 +93,7 @@
 
                                         <div class='form-group{{$errors->has('phone') ? ' has-error' : ''}}'>
                                           {!!Form::label('phone','Phone Number',['class' => 'control-label'])!!}
-                                            {!!Form::text('phone',$user->phone,['class' => 'form-control','placeholder' => 'Phone Number','required' => 'true'])!!}
+                                            {!!Form::text('phone',$user->phone,['class' => 'form-control','placeholder' => 'Phone Number'])!!}
                                             @if($errors->has('phone'))
                                               <span class="help-block">{{$errors->first('phone')}}</span>
                                             @endif                                          
@@ -125,7 +117,7 @@
 
                                          <div class='form-group{{$errors->has('facebook_url') ? ' has-error' : ''}}'>
                                           {!!Form::label('facebook_url','Facebook',['class' => 'control-label'])!!}
-                                            {!!Form::text('facebook_url',$user->facebook_url,['class' => 'form-control','placeholder' => 'Phone Number','required' => 'true'])!!}
+                                            {!!Form::text('facebook_url',$user->facebook_url,['class' => 'form-control','placeholder' => 'Phone Number'])!!}
                                             @if($errors->has('facebook_url'))
                                               <span class="help-block">{{$errors->first('facebook_url')}}</span>
                                             @endif                                          
@@ -133,7 +125,7 @@
 
                                         <div class='form-group{{$errors->has('twitter') ? ' has-error' : ''}}'>
                                           {!!Form::label('twitter','Twitter',['class' => 'control-label'])!!}
-                                            {!!Form::text('twitter',$user->twitter,['class' => 'form-control','placeholder' => 'Twitter','required' => 'true'])!!}
+                                            {!!Form::text('twitter',$user->twitter,['class' => 'form-control','placeholder' => 'Twitter'])!!}
                                             @if($errors->has('twitter'))
                                               <span class="help-block">{{$errors->first('twitter')}}</span>
                                             @endif                                          
@@ -141,7 +133,7 @@
 
                                         <div class='form-group{{$errors->has('google_plus_url') ? ' has-error' : ''}}'>
                                           {!!Form::label('google_plus_url','Google+',['class' => 'control-label'])!!}
-                                            {!!Form::text('google_plus_url',$user->google_plus_url,['class' => 'form-control','placeholder' => 'Phone Number','required' => 'true'])!!}
+                                            {!!Form::text('google_plus_url',$user->google_plus_url,['class' => 'form-control','placeholder' => 'Phone Number'])!!}
                                             @if($errors->has('google_plus_url'))
                                               <span class="help-block">{{$errors->first('google_plus_url')}}</span>
                                             @endif                                          

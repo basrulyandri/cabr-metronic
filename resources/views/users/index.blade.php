@@ -12,11 +12,7 @@
         <div class="col-md-12">
             <div class="portlet light bordered">
                 <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-bar-chart theme-font hide"></i>
-                        <span class="caption-subject font-blue-madison bold uppercase">Your Activity</span>
-                        <span class="caption-helper hide">weekly stats...</span>
-                    </div>
+                   
                     <div class="actions">
                         <div class="btn-group btn-group-devided">
                             <a href="{{route('user.add')}}" class="btn btn-success"><i class="fa fa-plus"></i> Add User</a>
@@ -42,8 +38,7 @@
                                         <a href="{{route('user.profile',$user->username)}}" class="primary-link">{{$user->getNameOrEmail(true)}}</a>
                                     </td>
                                     <td> {{$user->role->name}} </td>                                    
-                                    <td>                                        
-                                        <a href="{{route('user.edit',$user)}}" class="btn btn-warning btn-xs" title="Edit"><i class="fa fa-pencil"></i></a>
+                                    <td>                                                                                
                                         <a  class="btn btn-danger btn-xs hapus" user-id="{{$user->id}}" title="Delete"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>

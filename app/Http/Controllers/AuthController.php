@@ -15,14 +15,14 @@ class AuthController extends Controller
     }
 
     public function dologin(Request $request){
-    	$this->validate($request, [
+        $this->validate($request, [
             'email' => 'required',
             'password' => 'required',
         ]);  
-    	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){
-            
-                return redirect()->intended('/dashboard');
-            }                      
+        // dd($request->all());
+    	if(Auth::attempt(['email' => $request->input('email'),'password' => $request->input('password')])){            
+            return redirect()->intended('/dashboard');
+        }                      
         return redirect()->route('auth.login')->withInput();
     }
     
