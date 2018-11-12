@@ -121,6 +121,11 @@ Route::group(['middleware' => 'rbac'],function(){
 		'uses' => 'PermissionController@delete',
 		'as' => 'permission.delete',
 	]);
+
+	Route::get('mymessages', [
+			'uses' => 'MessageController@mymessages',
+			'as' => 'my.messages',
+		]);
 });
 
 Route::get('login',[

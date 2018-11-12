@@ -125,6 +125,78 @@ License: You must have a valid license purchased only from themeforest(the above
                             <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                             <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
                             <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                            <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
+                                    <i class="icon-envelope-open"></i>
+                                    <span class="badge badge-danger"> 4 </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="external">
+                                        <h3>You have
+                                            <span class="bold">7 New</span> Messages</h3>
+                                        <a href="{{route('my.messages')}}">view all</a>
+                                    </li>
+                                    <li>
+                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 275px;"><ul class="dropdown-menu-list scroller" style="height: 275px; overflow: hidden; width: auto;" data-handle-color="#637283" data-initialized="1">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+                                                    <span class="subject">
+                                                        <span class="from"> Lisa Wong </span>
+                                                        <span class="time">Just Now </span>
+                                                    </span>
+                                                    <span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+                                                    <span class="subject">
+                                                        <span class="from"> Richard Doe </span>
+                                                        <span class="time">16 mins </span>
+                                                    </span>
+                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
+                                                    <span class="subject">
+                                                        <span class="from"> Bob Nilson </span>
+                                                        <span class="time">2 hrs </span>
+                                                    </span>
+                                                    <span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
+                                                    <span class="subject">
+                                                        <span class="from"> Lisa Wong </span>
+                                                        <span class="time">40 mins </span>
+                                                    </span>
+                                                    <span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="photo">
+                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
+                                                    <span class="subject">
+                                                        <span class="from"> Richard Doe </span>
+                                                        <span class="time">46 mins </span>
+                                                    </span>
+                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
+                                                </a>
+                                            </li>
+                                        </ul><div class="slimScrollBar" style="background: rgb(99, 114, 131); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 160.904px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <i class="icon-bell"></i>

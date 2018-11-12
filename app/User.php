@@ -87,4 +87,14 @@ class User extends Authenticatable
         return $this->role->permissions->count();
     }
 
+    public function sentMessages()
+    {
+        return $this->hasMany(Message::class,'sender');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->hasMany(Message::class,'receiver');
+    }
+
 }

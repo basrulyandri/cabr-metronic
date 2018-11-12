@@ -1,8 +1,6 @@
 @extends('layouts.backend.master')
 @section('header')
-    <link href="{{url('assets/backend')}}/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="{{url('assets/backend')}}/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
-    <link href="{{url('assets/backend')}}/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+    
 @endsection
 @section('title')
   Permissions
@@ -55,20 +53,9 @@
 @stop
 
 @section('footer')
-   
-<script src="{{url('assets/backend')}}/js/plugins/dataTables/jquery.dataTables.js"></script>
-<script src="{{url('assets/backend')}}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-<script src="{{url('assets/backend')}}/js/plugins/dataTables/dataTables.responsive.js"></script>
-<script src="{{url('assets/backend')}}/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
 <script>
         $(document).ready(function() {
-            $('#datatables').dataTable({
-                responsive: true,
-                "dom": 'T<"clear">lfrtip',
-                "tableTools": {
-                    "sSwfPath": "{{url('assets/backend')}}/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf"
-                }
-            });
+            
             $('body').on('click','.btn-danger',function(){
                 //alert('test');
                 var id = $(this).attr('id');
