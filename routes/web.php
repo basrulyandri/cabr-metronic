@@ -134,6 +134,10 @@ Route::group(['middleware' => 'rbac'],function(){
 		'uses' => 'SettingController@update',
 		'as' => 'settings.update',
 	]);
+	Route::post('settings/create', [
+		'uses' => 'SettingController@create',
+		'as' => 'settings.create',
+	]);
 });
 
 Route::get('login',[

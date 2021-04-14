@@ -34,4 +34,10 @@ class SettingController extends Controller
 
     	return redirect()->back()->with('success','Setting has been updated successfully');
 	}
+
+    public function create(Request $request)
+	{
+		$setting = Setting::create($request->all());
+		return redirect()->back()->with('success','New Setting has been created successfully');
+	}
 }
