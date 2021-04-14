@@ -44,6 +44,8 @@
                                 </li>                                
                             </ul>
                         </li>
+                        <li class="nav-item{{(request()->is('setting/general')) ? ' active open':''}}">
+                            <a href="{{route('settings.view.category','general')}}" class="nav-link nav-toggle"><i class="icon-settings"></i> <span class="title">Setting</span></a></li>               
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>

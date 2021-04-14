@@ -126,6 +126,14 @@ Route::group(['middleware' => 'rbac'],function(){
 			'uses' => 'MessageController@mymessages',
 			'as' => 'my.messages',
 		]);
+	Route::get('settings/{category}', [
+		'uses' => 'SettingController@viewCategory',
+		'as' => 'settings.view.category',
+	]);
+	Route::post('settings/update', [
+		'uses' => 'SettingController@update',
+		'as' => 'settings.update',
+	]);
 });
 
 Route::get('login',[
